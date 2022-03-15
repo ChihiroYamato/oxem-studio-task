@@ -2,6 +2,9 @@
 
 namespace Core\OXEM\Organic;
 
+/**
+ * Класс реализация для сущности курица
+ */
 class Chicken extends Animal
 {
     public function produce(): int
