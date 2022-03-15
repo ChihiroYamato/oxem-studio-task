@@ -6,9 +6,30 @@ use Core\OXEM\Organic\Animal;
 
 final class Farm
 {
+    private static ?Farm $instance = null;
+
     protected array $farm = [];
     protected array $products = [];
     protected array $productsArchive = [];
+
+    private function __construct()
+    {
+
+    }
+
+    private function __clone()
+    {
+
+    }
+
+    public static function getInstance() : Farm
+    {
+        if (self::$instance === null) {
+            self::$instance = new self();
+        }
+
+        return self::$instance;
+    }
 
     public function registerAnimal(Animal $animal) : void
     {
